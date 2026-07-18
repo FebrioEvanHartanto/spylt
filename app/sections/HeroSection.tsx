@@ -4,6 +4,9 @@ import Image from "next/image";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/all";
+import { ScrollTrigger } from "gsap/all";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function HeroSection() {
   useGSAP(() => {
@@ -38,6 +41,23 @@ export default function HeroSection() {
         },
         "-=0.5",
       );
+
+    const heroTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".hero-container",
+        start: "10% top",
+        end: "bottom top",
+        scrub: true,
+        markers: true,
+      },
+    });
+
+    heroTl.to(".hero-container", {
+      rotate: 7,
+      scale: 0.9,
+      yPercent: 30,
+      ease: "power1.inOut",
+    });
   });
 
   return (

@@ -6,6 +6,7 @@ export default function Home() {
     <div>
       <Navbar />
       <HeroSection />
+      <div className="h-dvh border border-red-500"></div>
     </div>
   );
 }
