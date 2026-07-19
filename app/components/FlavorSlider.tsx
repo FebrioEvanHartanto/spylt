@@ -31,6 +31,7 @@ export default function FlavorSlider() {
               alt={`${flavor.color}-elements`}
               width={700}
               height={700}
+              sizes="(min-width:1024px) 50vw, (min-width:768px) 90vw, 384px"
               className="elements object-contain"
             />
             <h1>{flavor.name}</h1>
