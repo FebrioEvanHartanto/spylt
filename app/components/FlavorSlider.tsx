@@ -5,30 +5,64 @@ import Image from "next/image";
 import { gsap } from "@/lib/gsap";
 import { flavorlists } from "../constants/FlavorList";
 import { useRef } from "react";
+import { useMediaQuery } from "react-responsive";
 
 export default function FlavorSlider() {
   const sliderRef = useRef<HTMLDivElement>(null);
+
+  const isTablet = useMediaQuery({
+    query: "(max-width: 1024px)",
+  });
 
   useGSAP(() => {
     if (!sliderRef.current) return;
 
     const scrollAmount = sliderRef.current.scrollWidth - window.innerWidth;
 
-    const tl = gsap.timeline({
+    if (!isTablet) {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".flavor-section",
+          start: "2% top",
+          end: `+=${scrollAmount + 1500}px`,
+          scrub: true,
+          pin: true,
+        },
+      });
+
+      tl.to(".flavor-section", {
+        x: `-${scrollAmount + 1500}px`,
+        ease: "power1.inOut",
+      });
+    }
+
+    const titleTl = gsap.timeline({
       scrollTrigger: {
         trigger: ".flavor-section",
-        start: "2% top",
-        end: `+=${scrollAmount}px`,
+        start: "top top",
+        end: "bottom 80%",
         scrub: true,
-        pin: true,
-        markers: true,
       },
     });
 
-    tl.to(".flavor-section", {
-      x: `-${scrollAmount}px`,
-      ease: "power1.inOut",
-    });
+    titleTl
+      .to(".first-text-split", {
+        xPercent: -30,
+        ease: "power1.inOut",
+      })
+      .to(
+        ".flavor-text-scroll",
+
+        {
+          xPercent: -22,
+          ease: "power1.inOut",
+        },
+        ">",
+      )
+      .to(".second-text-split", {
+        xPercent: -10,
+        ease: "power1.inOut",
+      });
   });
 
   return (
