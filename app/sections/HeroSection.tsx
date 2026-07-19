@@ -2,11 +2,7 @@
 
 import Image from "next/image";
 import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { SplitText } from "gsap/all";
-import { ScrollTrigger } from "gsap/all";
-
-gsap.registerPlugin(ScrollTrigger);
+import { gsap, SplitText } from "@/lib/gsap";
 
 export default function HeroSection() {
   useGSAP(() => {

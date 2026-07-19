@@ -1,8 +1,7 @@
 "use client";
 
-import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { SplitText } from "gsap/all";
+import { gsap, SplitText } from "@/lib/gsap";
 
 export default function MessageSection() {
   useGSAP(() => {

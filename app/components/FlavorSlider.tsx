@@ -1,9 +1,9 @@
 "use client";
 
 import { useGSAP } from "@gsap/react";
-import { flavorlists } from "../constants/FlavorList";
 import Image from "next/image";
-import gsap from "gsap";
+import { gsap } from "@/lib/gsap";
+import { flavorlists } from "../constants/FlavorList";
 import { useRef } from "react";
 
 export default function FlavorSlider() {

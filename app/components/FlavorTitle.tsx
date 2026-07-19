@@ -1,11 +1,7 @@
 "use client";
 
-import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { SplitText } from "gsap/all";
-import { ScrollTrigger } from "gsap/all";
-
-gsap.registerPlugin(ScrollTrigger);
+import { gsap, SplitText } from "@/lib/gsap";
 
 export default function FlavorTitle() {
   useGSAP(() => {
