@@ -36,7 +36,6 @@ export default function MessageSection() {
         start: "top center",
         end: "bottom center",
         scrub: true,
-        markers: true,
       },
     });
 
@@ -45,7 +44,6 @@ export default function MessageSection() {
       scrollTrigger: {
         trigger: ".msg-text-scroll",
         start: "top 60%",
-        markers: true,
       },
     });
     revealTl.to(".msg-text-scroll", {
@@ -57,7 +55,6 @@ export default function MessageSection() {
       scrollTrigger: {
         trigger: ".message-content p",
         start: "top center",
-        markers: true,
       },
     });
     paragraphTl.from(paragraphSplit.words, {

@@ -48,7 +48,6 @@ export default function HeroSection() {
         start: "10% top",
         end: "bottom top",
         scrub: true,
-        markers: true,
       },
     });
 
