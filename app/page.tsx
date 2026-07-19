@@ -10,6 +10,7 @@ export default function Home() {
       <HeroSection />
       <MessageSection />
       <FlavorSection />
+      <div className="h-dvh border-red-500 border-solid border-2"></div>
     </div>
   );
 }

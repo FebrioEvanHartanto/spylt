@@ -1,9 +1,38 @@
+"use client";
+
+import { useGSAP } from "@gsap/react";
 import { flavorlists } from "../constants/FlavorList";
 import Image from "next/image";
+import gsap from "gsap";
+import { useRef } from "react";
 
 export default function FlavorSlider() {
+  const sliderRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(() => {
+    if (!sliderRef.current) return;
+
+    const scrollAmount = sliderRef.current.scrollWidth - window.innerWidth;
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".flavor-section",
+        start: "2% top",
+        end: `+=${scrollAmount}px`,
+        scrub: true,
+        pin: true,
+        markers: true,
+      },
+    });
+
+    tl.to(".flavor-section", {
+      x: `-${scrollAmount}px`,
+      ease: "power1.inOut",
+    });
+  });
+
   return (
-    <div className="slider-wrapper">
+    <div ref={sliderRef} className="slider-wrapper">
       <div className="flavors">
         {flavorlists.map((flavor) => (
           <div
@@ -16,12 +45,12 @@ export default function FlavorSlider() {
               width={700}
               height={700}
               sizes="(min-width:1024px) 50vw, (min-width:768px) 90vw, 384px"
-              className="absolute bottom-0 object-contain"
+              className="absolute bottom-0 object-contain w-full h-auto"
             />
             <Image
               src={`/images/${flavor.color}-drink.webp`}
               alt={`${flavor.color}-drink`}
-              width={435}
+              width={450}
               height={500}
               sizes="(min-width:1024px) 50vw, (min-width:768px) 90vw, 384px"
               className="drinks object-contain"
