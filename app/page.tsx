@@ -3,6 +3,7 @@ import Navbar from "./components/navbar";
 import FlavorSection from "./sections/FlavorSection";
 import HeroSection from "./sections/HeroSection";
 import MessageSection from "./sections/MessageSection";
+import NutritionsSection from "./sections/NutritionsSection";
 import { ScrollSmoother } from "@/lib/gsap";
 import { useGSAP } from "@gsap/react";
 
@@ -22,6 +23,7 @@ export default function Home() {
           <HeroSection />
           <MessageSection />
           <FlavorSection />
+          <NutritionsSection />
           <div className="h-dvh border-red-500 border-solid border-2"></div>
         </div>
       </div>
