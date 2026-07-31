@@ -238,13 +238,28 @@ body::-webkit-scrollbar {
   }
 
   .testimonials-section {
-    @apply bg-milk relative w-full h-[120dvh];
+    @apply bg-milk relative w-full h-[120dvh] overflow-visible;
 
     .pin-box {
-      @apply flex items-center justify-center w-full ps-52 absolute 2xl:bottom-32 bottom-[50vh];
+      @apply flex w-full absolute left-0 overflow-visible
+        max-md:h-96 max-md:bottom-[50vh] max-md:items-center max-md:justify-center
+        md:bottom-16 2xl:bottom-32 md:items-end md:justify-start md:pl-0;
+    }
 
-      .vd-card {
-        @apply md:w-96 w-80 flex-none md:rounded-[2vw] rounded-3xl -ms-44 overflow-hidden 2xl:relative absolute border-[.5vw] border-milk;
+    .vd-card {
+      @apply relative w-80 md:w-72 lg:w-80 xl:w-96 aspect-[9/16] flex-none overflow-hidden border-[.5vw] border-milk
+        rounded-3xl md:rounded-[2vw] cursor-pointer
+        max-md:absolute max-md:left-1/2 max-md:-translate-x-1/2
+        md:relative md:-ms-32 lg:-ms-40 xl:-ms-44 md:first:ms-0;
+
+      video {
+        @apply size-full object-cover;
+      }
+
+      .vd-card-audio-hint {
+        @apply absolute bottom-4 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full
+          bg-black/60 text-milk text-xs font-paragraph uppercase tracking-wide
+          pointer-events-none whitespace-nowrap;
       }
     }
 

@@ -5,6 +5,7 @@ import HeroSection from "./sections/HeroSection";
 import MessageSection from "./sections/MessageSection";
 import NutritionsSection from "./sections/NutritionsSection";
 import BenefitSection from "./sections/BenefitSection";
+import TestimonialSection from "./sections/TestimonialSection";
 import { ScrollSmoother } from "@/lib/gsap";
 import { useGSAP } from "@gsap/react";
 
@@ -25,7 +26,10 @@ export default function Home() {
           <MessageSection />
           <FlavorSection />
           <NutritionsSection />
-          <BenefitSection />
+          <div>
+            <BenefitSection />
+            <TestimonialSection />
+          </div>
           <div className="h-dvh border-red-500 border-solid border-2"></div>
         </div>
       </div>
