@@ -59,10 +59,23 @@ export default function HeroSection() {
     <section className="bg-main-bg">
       <div className="hero-container">
         <Image
-          src="/images/static-img.png"
-          alt="Hero Image"
+          src="/images/hero-bg.png"
+          alt="hero-bg"
           fill
-          className="object-cover object-center items-center justify-center"
+          className="absolute bottom-40 size-full object-cover md:hidden"
+        />
+        <Image
+          src="/images/hero-img.png"
+          alt="hero-img"
+          fill
+          className="absolute bottom-0 left-1/2 -translate-x-1/2 object-auto lg:hidden"
+        />
+        <video
+          src="/videos/hero-bg.mp4"
+          autoPlay
+          muted
+          playsInline
+          className="absolute inset-0 hidden h-full w-full object-cover lg:block"
         />
         <div className="hero-content opacity-0">
           <div className="overflow-hidden">
