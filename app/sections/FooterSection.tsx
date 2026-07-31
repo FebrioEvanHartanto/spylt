@@ -75,7 +75,12 @@ export default function FooterSection() {
                 placeholder="Enter your email"
                 className="w-full placeholder:font-sans placeholder:text-[#999999]"
               />
-              <img src="/images/arrow.svg" alt="arrow" />
+              <Image
+                src="/images/arrow.svg"
+                alt="arrow"
+                width={20}
+                height={20}
+              />
             </div>
           </div>
         </div>
