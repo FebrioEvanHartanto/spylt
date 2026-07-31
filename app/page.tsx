@@ -8,6 +8,7 @@ import BenefitSection from "./sections/BenefitSection";
 import TestimonialSection from "./sections/TestimonialSection";
 import { ScrollSmoother } from "@/lib/gsap";
 import { useGSAP } from "@gsap/react";
+import FooterSection from "./sections/FooterSection";
 
 export default function Home() {
   useGSAP(() => {
@@ -30,7 +31,7 @@ export default function Home() {
             <BenefitSection />
             <TestimonialSection />
           </div>
-          <div className="h-dvh border-red-500 border-solid border-2"></div>
+          <FooterSection />
         </div>
       </div>
     </main>
